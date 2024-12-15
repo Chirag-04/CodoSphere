@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema( // schema creation
+const userSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema( // schema creation
 		},
 		headline: {
 			type: String,
-			default: "CodoSphere User",
+			default: "Linkedin User",
 		},
 		location: {
 			type: String,
@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema( // schema creation
 		],
 		connections: [
 			{
-				type: mongoose.Schema.Types.ObjectId, // refercing
+				type: mongoose.Schema.Types.ObjectId,
 				ref: "User",
 			},
 		],
@@ -57,6 +57,6 @@ const userSchema = new mongoose.Schema( // schema creation
 	{ timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema); // model creation
+const User = mongoose.model("User", userSchema);
 
 export default User;
